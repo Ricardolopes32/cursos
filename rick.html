@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>capturar dados</title>
+</head>
+<body>
+	<h1> Capturar dados com js</h1>
+	<hr>
+	<form id="form">
+		<p><input type="text" id="valor" placeholder="Item"></p>                                 <!--botao para receber o texto com a a id valor -->
+		<p><input type="text" id="quantidade" placeholder="Quantidade"></p>                                 <!--botao para receber o texto com a a id valor -->
+		<p><input type="text" id="cor" placeholder="Cor"></p>                                 <!--botao para receber o texto com a a id valor -->
+		<p><input type="submit" value="digite"></p> <!-- botao submite com onclick para ativar uma função de capturarvalor-->
+	</form>
+
+	<ul id="valor_digitado">
+		
+	</ul>                                           <!-- paragrafo onde vai mostrar o valor digitado-->
+
+	<script type="text/javascript">
+		var mochila = []; //var para receber o valor do input digitevalor
+
+		document.getElementById("form").addEventListener('submit', form => {
+			form.preventDefault();
+
+			document.getElementById('valor_digitado').innerHTML = "";
+			
+			var item_mochila = document.getElementById('valor').value; //aqui a variavel é executada pela função e pega o valor 'valor'.value
+			mochila.push(item_mochila);
+
+			mochila.forEach(element => {
+				var li = document.createElement('li');
+				li.innerHTML = element;
+
+				document.getElementById('valor_digitado').appendChild(li); // aqui imprime o resultado
+			});
+
+			console.log(mochila);
+
+		});
+    </script>
+
+
+</body>
+</body>
+</html>
